@@ -130,7 +130,7 @@ echo " - Starting installation process - "
 if [ "$DEBUG" == "1" ]; then echo "cd ${steam_path}/steamapps/compatdata/322170/pfx"; fi
 cd "${steam_path}/steamapps/compatdata/322170/pfx"
 
-STEAM_COMPAT_DATA_PATH="${steam_path}/steamapps/compatdata/322170" WINEPREFIX="$PWD" "${proton_dir}/proton" runinprefix regedit /tmp/megahack/tmp.reg
+STEAM_COMPAT_DATA_PATH="${steam_path}/steamapps/compatdata/322170" WINEPREFIX="$PWD" steam-run "${proton_dir}/proton" runinprefix regedit /tmp/megahack/tmp.reg
 
 if ! [ "$DEBUG" == "1" ]; then clear; fi
 echo "Starting MegaHack installer ..."
@@ -164,7 +164,7 @@ if [ "$DEBUG" == "1" ]; then
    echo "STEAM_COMPAT_DATA_PATH=\"${steam_path}/steamapps/compatdata/322170\" WINEPREFIX=\"$PWD\" \"${proton_dir}/proton\" runinprefix \"${megahack_dir}/${megahack_exe}\""
 fi
 
-STEAM_COMPAT_DATA_PATH="${steam_path}/steamapps/compatdata/322170" WINEPREFIX="$PWD" "${proton_dir}/proton" runinprefix "${megahack_dir}/${megahack_exe}"
+STEAM_COMPAT_DATA_PATH="${steam_path}/steamapps/compatdata/322170" WINEPREFIX="$PWD" steam-run "${proton_dir}/proton" runinprefix "${megahack_dir}/${megahack_exe}"
 
 if [ "$use_v6_libcurl" == "1" ]; then
    echo "Warning: using v6's libcurl.dll to load!"
